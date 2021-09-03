@@ -1,0 +1,13 @@
+<apex:page controller="myCustomController">
+    <apex:form >
+        <apex:messages />
+        <apex:pageBlock title="Sign In Form">
+            <apex:pageBlockSection columns="1">
+                Username: <apex:inputText value="{!inputName}" />
+                Password: <apex:inputSecret value="{!inputPassword}" /> 
+            </apex:pageBlockSection>                         
+            <apex:commandButton value="Sign In" action="{!showUser}"/>               
+            <apex:commandButton value="Cancel" action="{!cancel}"/>                
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

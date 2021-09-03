@@ -1,0 +1,45 @@
+<apex:page controller="ManagerCabinetController" >   
+    <apex:form >
+        <apex:messages />
+        <apex:pageBlock title="Information about manager" >             
+            <apex:pageBlockTable value="{! UserCabinet }" var="us" >
+                <apex:column value="{! us.Id }"/>
+                <apex:column value="{! us.Name }"/>
+                <apex:column value="{! us.Region__c }"/>
+                <apex:column value="{! us.RegionId__c }"/>
+                <apex:column value="{! us.isManager__c }"/>
+                <apex:column value="{! us.RegionRate__c }"/>
+                <apex:column headerValue="input new rate" >
+                    <apex:inputText value="{!inputRegionRate}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:commandButton value="Show all user" action="{!showAllUserOfRegion}" />           
+            <apex:commandButton value="Save new region rate" action="{!changeRate}" />      
+            <apex:commandButton value="Exit" action="{!exit}"/>                   
+        </apex:pageBlock>  
+        
+        <apex:pageBlock title="Information about all user" rendered="{!showUsers}">    
+            <apex:pageBlockSection columns="1">
+                Last name: <apex:inputText value="{!inputLName}" />
+                First name: <apex:inputSecret value="{!inputFName}" /> 
+                <apex:commandButton value="show info abut user" action="{!showInfoAboutUser}" />                               
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockTable value="{!AllUser}" var="us" >                               
+                <apex:column value="{! us.Id }"/>
+                <apex:column value="{! us.Name }"/>
+                <apex:column value="{! us.First_name__c }"/>
+                <apex:column value="{! us.Region__c }"/>
+                <apex:column value="{! us.city__c }"/>
+                <apex:column value="{!us.Debt__c}"/>
+                <apex:column value="{! us.Water__c }"/>
+                <apex:column value="{! us.Electricity__c }"/>
+                <apex:column value="{! us.Gas__c }"/>
+                <apex:column value="{! us.RegionId__c }"/>
+                <apex:column value="{! us.RegionRate__c }"/>
+                <apex:column value="{! us.isBring__c }"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>    
+    </apex:form>
+</apex:page>

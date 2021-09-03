@@ -1,0 +1,11 @@
+<apex:page controller="WelcomeController" >
+    <apex:form >
+        <apex:messages />
+        <apex:pageBlock >
+            <h1>Hello! Do you want log in or sign up?</h1>    
+            <apex:commandButton value="Log In" action="{!login}" />
+            <apex:commandButton value="Sign Up as user" action="{!signUpAsUser}"/> 
+            <apex:commandButton value="Sign Up as manager" action="{!signUpAsManager}"/> 
+        </apex:pageBlock>            
+    </apex:form>    
+</apex:page>

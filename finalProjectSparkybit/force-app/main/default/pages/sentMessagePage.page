@@ -1,0 +1,11 @@
+<apex:page controller="MessageToManagerController">    
+    <apex:form >
+        <apex:messages />
+        <apex:pageBlock title="Log In Form">
+            <apex:pageBlockSection columns="1">
+                Input text: <apex:inputText value="{!inputMessage}" />
+            </apex:pageBlockSection>
+            <apex:commandButton value="Sent" action="{!sendMessage}"/>             
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

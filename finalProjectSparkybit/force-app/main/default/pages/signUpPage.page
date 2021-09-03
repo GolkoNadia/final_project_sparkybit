@@ -1,0 +1,15 @@
+<apex:page controller="myCustomController">
+    <apex:form >
+        <apex:messages />
+        <apex:pageBlock title="Sign Up Form">
+            <apex:pageBlockSection columns="2">
+                <apex:inputField value="{!user.Name}" />
+                <apex:inputSecret value="{!user.userPassword__c}" />
+                <apex:inputField value="{!user.age__c}" />
+                <apex:inputField value="{!user.hobby__c}" />               
+            </apex:pageBlockSection>            
+            <apex:commandButton value="Sign Up" action="{!Save}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>                
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

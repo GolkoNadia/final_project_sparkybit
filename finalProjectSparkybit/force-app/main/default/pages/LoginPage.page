@@ -1,0 +1,12 @@
+<apex:page controller="LoginController">   
+    <apex:form >
+        <apex:messages />
+        <apex:pageBlock title="Log In Form">
+            <apex:pageBlockSection columns="1">
+                Username: <apex:inputText value="{!inputName}" />
+                Password: <apex:inputSecret value="{!inputPassword}" /> 
+            </apex:pageBlockSection>
+            <apex:commandButton value="Log In" action="{!showUser}"/>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

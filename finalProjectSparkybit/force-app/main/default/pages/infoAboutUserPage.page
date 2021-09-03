@@ -1,0 +1,38 @@
+<apex:page controller="InfoAboutUserController" >    
+    <apex:form >
+        <apex:messages />        
+        <apex:pageBlock title="Information about choice user">            
+            <apex:pageBlockTable value="{! UserInfo }" var="us">
+                <apex:column value="{! us.Id }"/>
+                <apex:column value="{! us.Name }"/>
+                <apex:column value="{! us.First_name__c }"/>
+                <apex:column value="{! us.Region__c }"/>
+                <apex:column value="{! us.city__c }"/>
+                <apex:column value="{! us.RegionId__c }"/>
+                <apex:column value="{! us.Available_money__c }"/>
+                <apex:column value="{! us.Debt__c }"/>
+                <apex:column headerValue="Deb" >
+                    <apex:inputText value="{!input_new_doubt}"/>
+                </apex:column>
+                <apex:column value="{! us.Water__c }"/>
+                <apex:column value="{! us.Electricity__c }"/>
+                <apex:column value="{! us.Gas__c }"/>
+                <apex:column value="{! us.isManager__c }"/>
+                <apex:column value="{! us.RegionRate__c }"/>
+                <apex:column value="{! us.isBring__c }"/>                               
+            </apex:pageBlockTable>        
+            
+            <apex:commandButton value="Save change" action="{!saveNewDebt}"/>       
+            <apex:commandButton value="Return to cabinet" action="{!returnToCabinet}"/>       
+        </apex:pageBlock>      
+        
+        <apex:pageBlock title="User's payments">    
+            <apex:pageBlockTable value="{!AllPayments}" var="p" >                               
+                <apex:column value="{! p.Id }"/>
+                <apex:column value="{! p.Name }"/>
+                <apex:column value="{! p.Amount__c }"/>
+                <apex:column value="{! p.Debt__c }"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>        
+    </apex:form>
+</apex:page>

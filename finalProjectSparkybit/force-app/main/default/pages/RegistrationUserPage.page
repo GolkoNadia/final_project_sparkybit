@@ -1,0 +1,16 @@
+<apex:page controller="CreateUserController">   
+    <apex:form >
+        <apex:messages />
+        <apex:pageBlock title="Sign Up Form for user">
+            <apex:pageBlockSection columns="2">
+                <apex:inputField value="{!user.Name}" />
+                <apex:inputField value="{!user.First_name__c}" />
+                <apex:inputSecret value="{!user.Password__c}" />
+                <apex:inputField value="{!user.Region__c}" />
+                <apex:inputField value="{!user.City__c}" />
+                <apex:inputField value="{!user.Available_money__c}" />
+            </apex:pageBlockSection>            
+            <apex:commandButton value="Sign Up u" action="{!SaveUser}"/>
+        </apex:pageBlock>        
+    </apex:form>    
+</apex:page>

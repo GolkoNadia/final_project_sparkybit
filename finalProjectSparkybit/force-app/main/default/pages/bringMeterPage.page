@@ -1,0 +1,14 @@
+<apex:page controller="BringMettersController">
+    <apex:form >
+        <apex:messages />
+        <apex:pageBlock title="Bring meter form">
+            <apex:pageBlockSection columns="1">
+                Gas: <apex:inputText value="{!inputGas}" />
+                Electricituy: <apex:inputText value="{!inputElectricity}" />
+                Water: <apex:inputText value="{!inputWater}" /> 
+            </apex:pageBlockSection>
+            <apex:commandButton value="Bring menter" action="{!saveMeters}"/>   
+            <apex:commandButton value="Return to cabinet" action="{!returnToCabinet}"/>       
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

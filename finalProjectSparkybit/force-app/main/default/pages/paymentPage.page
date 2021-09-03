@@ -1,0 +1,19 @@
+<apex:page controller="PaymentForMeterReadingsController">
+    <apex:form >
+        <apex:messages />
+        <apex:pageBlock title="Information about debt">            
+            <apex:pageBlockTable value="{! UserCabinet }" var="us">
+                <apex:column value="{! us.Id }"/>
+                <apex:column value="{! us.debt__c }"/>
+                <apex:column value="{! us.available_money__c }"/>                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:pageBlock title="Pay Form">
+            <apex:pageBlockSection columns="1">
+                Amount: <apex:inputText value="{!inputAmount}" />                
+            </apex:pageBlockSection>
+            <apex:commandButton value="Pay debt" action="{!payDebt}"/>      
+            <apex:commandButton value="Return to cabinet" action="{!returnToCabinet}"/>       
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

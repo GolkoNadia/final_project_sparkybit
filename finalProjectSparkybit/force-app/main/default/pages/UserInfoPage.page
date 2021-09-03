@@ -1,0 +1,14 @@
+<apex:page controller="myCustomController">
+    <apex:pageBlock title="Information about user">        
+        <apex:messages />
+        <apex:form >            
+            <apex:pageBlockTable value="{! userinfo }" var="u">
+                <apex:column value="{! u.Id }"/>
+                <apex:column value="{! u.age__c }"/>
+                <apex:column value="{! u.Name }"/>
+                <apex:column value="{! u.hobby__c }"/>
+            </apex:pageBlockTable>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>    
+        </apex:form>
+    </apex:pageBlock>    
+</apex:page>

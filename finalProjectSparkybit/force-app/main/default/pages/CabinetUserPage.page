@@ -1,0 +1,44 @@
+<apex:page controller="UserCabinetController" >    
+    <apex:form >
+        <apex:messages />        
+        <apex:pageBlock title="Information about user">            
+            <apex:pageBlockTable value="{! UserCabinet }" var="us">
+                <apex:column value="{! us.Id }"/>
+                <apex:column value="{! us.Name }"/>
+                <apex:column value="{! us.First_name__c }"/>
+                <apex:column value="{! us.Region__c }"/>
+                <apex:column headerValue="input new region" >
+                    <apex:inputField value="{!user.Region__c}"  />                    
+                </apex:column>                
+                <apex:column value="{! us.city__c }"/>
+                <apex:column headerValue="input new city" >
+                    <apex:inputField value="{!user.City__c}" />
+                </apex:column>                
+                <apex:column value="{! us.RegionId__c }"/>
+                <apex:column value="{! us.Available_money__c }"/>
+                <apex:column value="{! us.Debt__c }"/>
+                <apex:column value="{! us.Water__c }"/>
+                <apex:column value="{! us.Electricity__c }"/>
+                <apex:column value="{! us.Gas__c }"/>
+                <apex:column value="{! us.isManager__c }"/>
+                <apex:column value="{!us.regionRate__c}"/>   
+                <apex:column value="{!us.isBring__c}"/>                
+            </apex:pageBlockTable>        
+            
+            <apex:commandButton value="Bring meters" action="{!bringMeters}" />         
+            <apex:commandButton value="Pay" action="{!PaymentCommunal}" /> 
+            <apex:commandButton value="send email to manager" action="{!sendMessageToManager}" />         
+            <apex:commandButton value="Save new address" action="{!changeAddress}" />                 
+            <apex:commandButton value="Exit" action="{!exit}"/>       
+        </apex:pageBlock>      
+        
+        <apex:pageBlock title="User's payments">    
+            <apex:pageBlockTable value="{!AllPayments}" var="p" >                               
+                <apex:column value="{! p.Id }"/>
+                <apex:column value="{! p.Name }"/>
+                <apex:column value="{! p.Amount__c }"/>
+                <apex:column value="{! p.Debt__c }"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

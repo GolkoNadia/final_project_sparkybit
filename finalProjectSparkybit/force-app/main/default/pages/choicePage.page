@@ -1,0 +1,12 @@
+<apex:page controller="myCustomController" >
+    <apex:form >
+        <apex:messages />
+        <apex:pageBlock >
+            <h1>Hello! Do you want sign in or sign up?</h1>    
+            <apex:commandButton value="Sign In" action="{!signIn}" />
+            <apex:commandButton value="Sign Up" action="{!SignUp}"/> 
+        </apex:pageBlock>    
+        
+    </apex:form>
+    
+</apex:page>
